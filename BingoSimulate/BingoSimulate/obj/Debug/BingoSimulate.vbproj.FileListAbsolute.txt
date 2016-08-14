@@ -1,0 +1,34 @@
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\bin\Debug\BingoSimulate.exe
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\bin\Debug\BingoSimulate.pdb
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\bin\Debug\BingoSimulate.xml
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\obj\Debug\BingoSimulate.vbprojResolveAssemblyReference.cache
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\obj\Debug\BingoSimulate.Resources.resources
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\obj\Debug\BingoSimulate.vbproj.GenerateResource.Cache
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\obj\Debug\BingoSimulate.exe
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\obj\Debug\BingoSimulate.xml
+C:\Users\tominote\AppData\Local\Temporary Projects\BingoSimulate\obj\Debug\BingoSimulate.pdb
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.exe
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.xml
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.pdb
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.exe
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.pdb
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.xml
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.Resources.resources
+C:\Users\tominote\Desktop\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.vbproj.GenerateResource.Cache
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.exe
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.xml
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.pdb
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.exe
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.pdb
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.xml
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.Resources.resources
+C:\Dropbox\20160814_ビンゴの統計学\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.vbproj.GenerateResource.Cache
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.exe
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.xml
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.pdb
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.exe
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.pdb
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\bin\Debug\BingoSimulate.xml
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.vbprojResolveAssemblyReference.cache
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.Resources.resources
+C:\Dropbox\20160814_ビンゴの統計学\Simulation-of-Bingo\BingoSimulate\BingoSimulate\obj\Debug\BingoSimulate.vbproj.GenerateResource.Cache
