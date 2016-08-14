@@ -14,6 +14,8 @@ hiraxさんの[hirax.net::モンテカルロでビンゴ大会::(2001.12.17)](ht
 
 赤はシグモイド曲線にフィッティングしそうだったのであてはめた結果。
 
+![resultwithoutsigmoid](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/bingorateresult_withoutsigm.png)
+
 ![result](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/bingorateresult.png)
 
 * ここで用いたシグモイド関数は下記の数式のもの。標準のシグモイド関数に定数倍と原点移動の変数を追加したもの。
