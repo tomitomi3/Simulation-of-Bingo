@@ -8,6 +8,9 @@ Public Class clsBingoCardMgr
     ''' <summary>Exist FREE</summary>
     Public Property IsExistFREE As Boolean = True
 
+    ''' <summary>Bingo card number sequence</summary>
+    Public Property NumberSequenceSeries As clsBingoCard.EnumBingoNumberSequence = clsBingoCard.EnumBingoNumberSequence.Collumn15Number
+
     ''' <summary>bingo cards</summary>
     Private _bingoCards As List(Of clsBingoCard) = Nothing
 
@@ -22,7 +25,10 @@ Public Class clsBingoCardMgr
     ''' default constructor
     ''' </summary>
     Public Sub New()
-        'nop
+        clsRandomXorshiftSingleton.GetInstance.SetSeed(Date.Now.Millisecond)
+        For i As Integer = 0 To 99
+            clsRandomXorshiftSingleton.GetInstance.Next()
+        Next
     End Sub
 
     ''' <summary>
@@ -40,13 +46,17 @@ Public Class clsBingoCardMgr
             If Me.IsExistFREE = False Then
                 tempBingoCard.FREE_POSITION = -1
             End If
-            tempBingoCard.Init()
+            tempBingoCard.Init(Me.NumberSequenceSeries)
 
             Me._bingoCards.Add(tempBingoCard)
         Next
 
         'pick bingo No
-        Me._bingoNos = clsUtil.RandomPermutaion(99, ai_isZeroStart:=False)
+        If Me.NumberSequenceSeries = clsBingoCard.EnumBingoNumberSequence.AllRandom Then
+            Me._bingoNos = clsUtil.RandomPermutaion(1, 100, -1)
+        ElseIf Me.NumberSequenceSeries = clsBingoCard.EnumBingoNumberSequence.Collumn15Number Then
+            Me._bingoNos = clsUtil.RandomPermutaion(1, 15 * 5 + 1, -1)
+        End If
         For i As Integer = 0 To _bingoNos.Count - 1
             Me._bingoNos(i) += 1
         Next

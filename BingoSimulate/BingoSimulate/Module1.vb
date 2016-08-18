@@ -2,7 +2,7 @@
     ''' <summary>
     ''' A Bingo simulation using Monte carlo method
     ''' </summary>
-    Sub Main()
+    Sub Main(args() As String)
         Dim sim As New clsBingoCardMgr()
 
         'result
@@ -13,24 +13,25 @@
         Dim tempCountBingo = New List(Of Integer)
         Dim tempCountBingoRate = New List(Of Double)
         Dim person As Integer = 0
-        Dim tryCount As Integer = 1000
+        Dim tryCount As Integer = 100000
 
-        'person 1
+        'person 1, per 15 number
         person = 1
         sim.IsExistFREE = True
+        sim.NumberSequenceSeries = clsBingoCard.EnumBingoNumberSequence.Collumn15Number
         BingoSimulate(sim, person, tryCount, tempCountBingo, tempCountBingoRate)
         countBingo.Add(tempCountBingo)
         countBingoRate.Add(tempCountBingoRate)
 
-        ''person 1
-        'person = 1
-        'sim.IsExistFREE = False
-        'BingoSimulate(sim, person, tryCount, tempCountBingo, tempCountBingoRate)
-        'countBingo.Add(tempCountBingo)
-        'countBingoRate.Add(tempCountBingoRate)
+        'person 1, all random
+        person = 1
+        sim.IsExistFREE = True
+        sim.NumberSequenceSeries = clsBingoCard.EnumBingoNumberSequence.AllRandom
+        BingoSimulate(sim, person, tryCount, tempCountBingo, tempCountBingoRate)
+        countBingo.Add(tempCountBingo)
+        countBingoRate.Add(tempCountBingoRate)
 
         'Output
-        'header
         Console.Write("Round,")
         For i = 0 To countBingo.Count - 1
             Console.Write("Condition{0},", i + 1)

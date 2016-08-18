@@ -8,6 +8,14 @@ Public Class clsBingoCard
     Public Property FREE_POSITION As Integer = 12
     Public Const BINGONO As Integer = 25
 
+    ''' <summary>Bingo card number sequence</summary>
+    Public Enum EnumBingoNumberSequence
+        ''' <summary>all random</summary>
+        AllRandom
+        ''' <summary>1:1~15 2:16~30 3:31~45 4:46~60 5:61~75</summary>
+        Collumn15Number
+    End Enum
+
     ''' <summary>
     ''' default constructor
     ''' </summary>
@@ -18,24 +26,44 @@ Public Class clsBingoCard
     ''' <summary>
     ''' Init
     ''' </summary>
-    Public Sub Init()
-        Dim tempBingoNos = clsUtil.RandomPermutaion(99, ai_isZeroStart:=False)
-
+    Public Sub Init(ByVal ai_numberSequence As EnumBingoNumberSequence)
         'Bingo card index
         ' 1  2  3  4  5
         ' 6  7  8  9 10
         '11 12 13 14 15 index 13(12) = free!
         '16 17 18 19 20
         '21 22 23 24 25
-        For i As Integer = 0 To BINGONO - 1
-            _bingoCard.Add(-1)
-            _hitNoMask.Add(False)
-            If i = FREE_POSITION Then
-                _hitNoMask(i) = True 'Free
-            Else
-                _bingoCard(i) = tempBingoNos(i)
-            End If
-        Next
+        If ai_numberSequence = EnumBingoNumberSequence.AllRandom Then
+            Dim tempBingoNos = clsUtil.RandomPermutaion(1, 100, -1)
+            For i As Integer = 0 To BINGONO - 1
+                _bingoCard.Add(-1)
+                _hitNoMask.Add(False)
+                If i = FREE_POSITION Then
+                    _hitNoMask(i) = True 'Free
+                Else
+                    _bingoCard(i) = tempBingoNos(i)
+                End If
+            Next
+        ElseIf ai_numberSequence = EnumBingoNumberSequence.Collumn15Number Then
+            Dim count As Integer = 0
+            For ii As Integer = 0 To 4
+                Dim min = ii * 15 + 1
+                Dim max = min + 15
+                Dim randomPermutation = clsUtil.RandomPermutaion(min, max, -1)
+
+                For j As Integer = 0 To 4
+                    _bingoCard.Add(-1)
+                    _hitNoMask.Add(False)
+                    If count = FREE_POSITION Then
+                        _hitNoMask(count) = True 'Free
+                    Else
+                        _bingoCard(count) = randomPermutation(j)
+                    End If
+
+                    count += 1
+                Next
+            Next
+        End If
     End Sub
 
     ''' <summary>

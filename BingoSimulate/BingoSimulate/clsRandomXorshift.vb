@@ -218,40 +218,42 @@ Public Class clsUtil
     ''' </summary>
     ''' <param name="ai_max">0 to ai_max-1</param>
     ''' <param name="ai_removeIndex">RemoveIndex</param>
-    ''' <param name="ai_isZeroStart">zero start flg</param>
     ''' <returns></returns>
-    Public Shared Function RandomPermutaion(ByVal ai_max As Integer, Optional ByVal ai_removeIndex As Integer = -1, Optional ByVal ai_isZeroStart As Boolean = True) As List(Of Integer)
-        Dim ary As New List(Of Integer)(CInt(ai_max * 1.5))
-        If ai_removeIndex = -1 Then
-            If ai_isZeroStart = True Then
-                For i As Integer = 0 To ai_max - 1
-                    If ai_removeIndex <> i Then
-                        ary.Add(i)
-                    End If
-                Next
-            Else
-                For i As Integer = 0 To ai_max - 1
-                    If ai_removeIndex <> i Then
-                        ary.Add(i + 1)
-                    End If
-                Next
-            End If
-        Else
-            If ai_isZeroStart = True Then
-                For i As Integer = 0 To ai_max - 1
-                    ary.Add(i)
-                Next
-            Else
-                For i As Integer = 0 To ai_max - 1
-                    ary.Add(i + 1)
-                Next
-            End If
+    Public Shared Function RandomPermutaion(ByVal ai_max As Integer, Optional ByVal ai_removeIndex As Integer = -1) As List(Of Integer)
+        Return RandomPermutaion(0, ai_max, ai_removeIndex)
+    End Function
+
+    ''' <summary>
+    ''' Generate Random permutation with range (ai_min to ai_max-1)
+    ''' </summary>
+    ''' <param name="ai_min">start value</param>
+    ''' <param name="ai_max">ai_max-1</param>
+    ''' <param name="ai_removeIndex">RemoveIndex -1 is invalid</param>
+    ''' <returns></returns>
+    Public Shared Function RandomPermutaion(ByVal ai_min As Integer, ByVal ai_max As Integer, ByVal ai_removeIndex As Integer) As List(Of Integer)
+        Dim nLength As Integer = ai_max - ai_min
+        If nLength = 0 OrElse nLength < 0 Then
+            Return New List(Of Integer)
         End If
 
+        Dim ary As New List(Of Integer)(CInt(nLength * 1.5))
+        If ai_removeIndex <= -1 Then
+            For ii As Integer = ai_min To ai_max - 1
+                ary.Add(ii)
+            Next
+        Else
+            For ii As Integer = ai_min To ai_max - 1
+                If ai_removeIndex <> ii Then
+                    ary.Add(ii)
+                End If
+            Next
+        End If
+
+        'Fisher–Yates shuffle / フィッシャー - イェーツのシャッフル
         Dim n As Integer = ary.Count
         While n > 1
             n -= 1
-            Dim k As Integer = CInt(clsRandomXorshiftSingleton.GetInstance().Next(0, n + 1))
+            Dim k As Integer = clsRandomXorshiftSingleton.GetInstance().Next(0, n + 1)
             Dim tmp As Integer = ary(k)
             ary(k) = ary(n)
             ary(n) = tmp
