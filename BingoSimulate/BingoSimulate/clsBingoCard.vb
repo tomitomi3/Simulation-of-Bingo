@@ -16,6 +16,19 @@ Public Class clsBingoCard
         Collumn15Number
     End Enum
 
+    ''' <summary>Bingo card number sequence</summary>
+    Public Enum EnumBingoResult
+        ''' <summary>blank</summary>
+        Blank
+        ''' <summary>Bingo</summary>
+        Bingo
+        ''' <summary>done Bingo</summary>
+        DoneBingo
+        ''' <summary>not implement</summary>
+        Reach
+    End Enum
+
+#Region "public"
     ''' <summary>
     ''' default constructor
     ''' </summary>
@@ -83,36 +96,23 @@ Public Class clsBingoCard
     End Sub
 
     ''' <summary>
-    ''' previous bingo
+    ''' Result
     ''' </summary>
     ''' <returns></returns>
-    Public Function IsReach() As Boolean
-        Throw New NotImplementedException
-    End Function
-
-    ''' <summary>
-    ''' Bing
-    ''' </summary>
-    ''' <returns></returns>
-    Public Function IsBingo() As Boolean
-        If _IsDoneBingo = True Then
-            Return True
+    Public Function GetResult() As EnumBingoResult
+        Dim isBingo = Me.CheckBingo()
+        If isBingo = True AndAlso Me._IsDoneBingo = True Then
+            Return EnumBingoResult.DoneBingo
+        ElseIf isBingo = True AndAlso Me._IsDoneBingo = False Then
+            Me._IsDoneBingo = True
+            Return EnumBingoResult.Bingo
+        Else
+            Return EnumBingoResult.Blank
         End If
-
-        'all bingo combination are 12 patterns.
-        _IsDoneBingo = Me.CheckBingo()
-
-        Return _IsDoneBingo
     End Function
+#End Region
 
-    ''' <summary>
-    ''' done bingo
-    ''' </summary>
-    ''' <returns></returns>
-    Public Function IsDoneBingo() As Boolean
-        Return _IsDoneBingo
-    End Function
-
+#Region "private"
     ''' <summary>
     ''' Check bingo
     ''' </summary>
@@ -174,4 +174,5 @@ Public Class clsBingoCard
 
         Return False
     End Function
+#End Region
 End Class

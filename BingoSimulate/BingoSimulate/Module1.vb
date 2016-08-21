@@ -34,13 +34,14 @@
         'Output
         Console.Write("Round,")
         For i = 0 To countBingo.Count - 1
-            Console.Write("Condition{0},", i + 1)
+            Console.Write("Condition{0},,", i + 1)
         Next
         Console.WriteLine("")
         'data
         For i = 0 To countBingo(0).Count - 1
             Console.Write("{0},", i + 1)
             For j = 0 To countBingo.Count - 1
+                Console.Write("{0},", countBingo(j)(i))
                 Console.Write("{0},", countBingoRate(j)(i))
             Next
             Console.WriteLine("")
@@ -49,26 +50,29 @@
 
     Private Sub BingoSimulate(ByRef sim As clsBingoCardMgr, ByVal person As Integer, ByVal tryCount As Integer,
                               ByRef countBingo As List(Of Integer), ByRef countBingoRate As List(Of Double))
+        Dim maxNumber = sim.MaxBingoNumber
         countBingo = New List(Of Integer)
         countBingoRate = New List(Of Double)
-        For i = 0 To 99 - 1 'pick 1 ~ 99
+        For i As Integer = 0 To maxNumber - 1
             countBingo.Add(0)
             countBingoRate.Add(0.0)
         Next
 
-        'do bingo game
+        'playing bingo!
         sim.N = person
         For i = 0 To tryCount - 1
             sim.Init()
-            For j = 0 To 99 - 1 'pick 1 ~ 99
-                countBingo(j) += sim.PickBall()
+            For j = 0 To maxNumber - 1
+                sim.PickBall()
+                countBingo(j) += sim.CountBingo
+                countBingoRate(j) += sim.CountBingoCumulative
             Next
         Next
 
         'calc "Bingo!" rate
-        Dim bunbo As Double = CDbl(tryCount * person)
-        For i = 0 To 99 - 1 'pick 1 ~ 99
-            countBingoRate(i) = CDbl(countBingo(i) / bunbo)
+        Dim totalTryal As Double = CDbl(tryCount * person)
+        For i = 0 To maxNumber - 1
+            countBingoRate(i) = CDbl(countBingoRate(i) / totalTryal)
         Next
     End Sub
 End Module
