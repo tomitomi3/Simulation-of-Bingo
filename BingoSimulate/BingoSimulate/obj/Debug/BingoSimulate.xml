@@ -11,12 +11,6 @@ BingoSimulate
  Bingo card manager
  </summary>
 </member>
-<member name="P:BingoSimulate.clsBingoCardMgr.N">
- <summary>entry person</summary>
-</member>
-<member name="P:BingoSimulate.clsBingoCardMgr.IsExistFREE">
- <summary>Exist FREE</summary>
-</member>
 <member name="F:BingoSimulate.clsBingoCardMgr._bingoCards">
  <summary>bingo cards</summary>
 </member>
@@ -26,12 +20,27 @@ BingoSimulate
 <member name="F:BingoSimulate.clsBingoCardMgr._gameRound">
  <summary>round</summary>
 </member>
+<member name="F:BingoSimulate.clsBingoCardMgr._bingoCumulativeCount">
+ <summary>cumulative bingo count</summary>
+</member>
+<member name="F:BingoSimulate.clsBingoCardMgr._bingoCount">
+ <summary>bingo count</summary>
+</member>
+<member name="P:BingoSimulate.clsBingoCardMgr.N">
+ <summary>entry person</summary>
+</member>
+<member name="P:BingoSimulate.clsBingoCardMgr.IsExistFREE">
+ <summary>Exist FREE</summary>
+</member>
+<member name="P:BingoSimulate.clsBingoCardMgr.NumberSequenceSeries">
+ <summary>Bingo card number sequence</summary>
+</member>
 <member name="M:BingoSimulate.clsBingoCardMgr.#ctor">
  <summary>
  default constructor
  </summary>
 </member>
-<member name="M:BingoSimulate.clsBingoCardMgr.Init(System.Boolean)">
+<member name="M:BingoSimulate.clsBingoCardMgr.Init">
  <summary>
  Initialze
  </summary>
@@ -40,19 +49,42 @@ BingoSimulate
  <summary>
  Pick ball
  </summary>
- <returns></returns>
 </member>
 <member name="T:BingoSimulate.clsBingoCard">
  <summary>
  Bingocard
  </summary>
 </member>
+<member name="T:BingoSimulate.clsBingoCard.EnumBingoNumberSequence">
+ <summary>Bingo card number sequence</summary>
+</member>
+<member name="F:BingoSimulate.clsBingoCard.EnumBingoNumberSequence.AllRandom">
+ <summary>all random</summary>
+</member>
+<member name="F:BingoSimulate.clsBingoCard.EnumBingoNumberSequence.Collumn15Number">
+ <summary>1:1~15 2:16~30 3:31~45 4:46~60 5:61~75</summary>
+</member>
+<member name="T:BingoSimulate.clsBingoCard.EnumBingoResult">
+ <summary>Bingo card number sequence</summary>
+</member>
+<member name="F:BingoSimulate.clsBingoCard.EnumBingoResult.Blank">
+ <summary>blank</summary>
+</member>
+<member name="F:BingoSimulate.clsBingoCard.EnumBingoResult.Bingo">
+ <summary>Bingo</summary>
+</member>
+<member name="F:BingoSimulate.clsBingoCard.EnumBingoResult.DoneBingo">
+ <summary>done Bingo</summary>
+</member>
+<member name="F:BingoSimulate.clsBingoCard.EnumBingoResult.Reach">
+ <summary>not implement</summary>
+</member>
 <member name="M:BingoSimulate.clsBingoCard.#ctor">
  <summary>
  default constructor
  </summary>
 </member>
-<member name="M:BingoSimulate.clsBingoCard.Init">
+<member name="M:BingoSimulate.clsBingoCard.Init(BingoSimulate.clsBingoCard.EnumBingoNumberSequence)">
  <summary>
  Init
  </summary>
@@ -62,21 +94,9 @@ BingoSimulate
  set no
  </summary>
 </member>
-<member name="M:BingoSimulate.clsBingoCard.IsReach">
+<member name="M:BingoSimulate.clsBingoCard.GetResult">
  <summary>
- previous bingo
- </summary>
- <returns></returns>
-</member>
-<member name="M:BingoSimulate.clsBingoCard.IsBingo">
- <summary>
- Bing
- </summary>
- <returns></returns>
-</member>
-<member name="M:BingoSimulate.clsBingoCard.IsDoneBingo">
- <summary>
- done bingo
+ Result
  </summary>
  <returns></returns>
 </member>
@@ -212,16 +232,24 @@ BingoSimulate
  <param name="ai_seed"></param>
  <remarks></remarks>
 </member>
-<member name="M:BingoSimulate.clsUtil.RandomPermutaion(System.Int32,System.Int32,System.Boolean)">
+<member name="M:BingoSimulate.clsUtil.RandomPermutaion(System.Int32,System.Int32)">
  <summary>
  Generate Random permutation
  </summary>
  <param name="ai_max">0 to ai_max-1</param>
  <param name="ai_removeIndex">RemoveIndex</param>
- <param name="ai_isZeroStart">zero start flg</param>
  <returns></returns>
 </member>
-<member name="M:BingoSimulate.Module1.Main">
+<member name="M:BingoSimulate.clsUtil.RandomPermutaion(System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Generate Random permutation with range (ai_min to ai_max-1)
+ </summary>
+ <param name="ai_min">start value</param>
+ <param name="ai_max">ai_max-1</param>
+ <param name="ai_removeIndex">RemoveIndex -1 is invalid</param>
+ <returns></returns>
+</member>
+<member name="M:BingoSimulate.Module1.Main(System.String[])">
  <summary>
  A Bingo simulation using Monte carlo method
  </summary>
