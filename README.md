@@ -1,30 +1,22 @@
 # Introduction
 A Bingo simulation using the Monte Carlo method.
 
-hiraxさんの[hirax.net::モンテカルロでビンゴ大会::(2001.12.17)](http://www.hirax.net/dekirukana6/bingo/)をふと思い出したので行ってみました。
-ビンゴするまで番号を開けた回数を累積したグラフ（確率分布）を作ってみました。
+![top_img_irasutoya](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/bingo.png)
+
+hiraxさんの[hirax.net::モンテカルロでビンゴ大会::(2001.12.17)](http://www.hirax.net/dekirukana6/bingo/)をふと思い出したので行ってみました。ビンゴするまでビンゴカードを開けた回数とビンゴした確率のグラフ（確率分布）を作ってみました。
 
 # Condition
 
-1枚のビンゴカード（5×5、真ん中がFREE）がビンゴするまで何回番号を開けたかを数える。これを1000回実行する。
+1枚のビンゴカード（5×5、真ん中がFREE）がビンゴするまで何回番号を開けたかを数える。これを10000回実行する。
+
+* 1～75までのビンゴカード
+* 1～99までのビンゴカード
 
 # Result
 
-青がシミュレーション結果。
+![result](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/bingo_img1.png)
 
-赤はシグモイド曲線にフィッティングしそうだったのであてはめた結果。
-
-![resultwithoutsigmoid](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/bingorateresult_withoutsigm.png)
-
-![result](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/bingorateresult.png)
-
-* ここで用いたシグモイド関数は下記の数式のもの。標準のシグモイド関数に定数倍と原点移動の変数を追加したもの。
-
-![sigmoid](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/model_sigmoid.png)
-
-* フィッティングした結果
-
-![sigmoid_fitting](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/model_sigmoid_fitting.png)
+![result2](https://github.com/tomitomi3/Simulation-of-Bingo/blob/master/_img/bingo_img2.png)
 
 # Refference
 1. [hirax.net::モンテカルロでビンゴ大会::(2001.12.17)](http://www.hirax.net/dekirukana6/bingo/)
